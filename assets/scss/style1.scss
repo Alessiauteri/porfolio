@@ -1,0 +1,390 @@
+
+@mixin slidein($slide,$from, $to) {
+	@keyframes #{
+		$slide
+	}
+	{
+		from {
+			margin-left: $to;
+			width: 300%;
+		}
+		to {
+			margin-left: $from;
+			width: 100%;
+		}
+	}
+}
+
+
+$color-1:rgba(255, 255, 255, 0.685);
+$color-container: rgba(255, 255, 255, 0.418);
+$color-font: #000;
+$myfont: 'EB Garamond', serif;
+
+* {
+	margin: 0;
+	padding: 0;
+}
+html {
+	margin: 0;
+	padding: 0;
+	scroll-behavior: smooth;
+}
+body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: auto;
+	font-size: 22px;
+	font-family: $myfont;
+	color: $color-font;
+	background-color: #ffffff;
+	background-image: url("../css/img/sfondo.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+.menu {
+	width: 100%;
+	position: fixed;
+	top: 0;
+	background-color: $color-1;
+	height: 60px;
+	margin: 0;
+	padding: 0;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	justify-content: space-around;
+	color: $color-font;
+}
+.home {
+	width: 100%;
+	height: auto;
+}
+.link {
+	a {
+		color: $color-font;
+		text-decoration: none;
+		justify-content: space-around;
+		margin-top: 20px;
+		padding: 1px;
+		position: relative;
+		display: block;
+		border-bottom: solid 1px black;
+	}
+}
+.link-1 {
+	a {
+		color: $color-font;
+		text-decoration: none;
+		justify-content: space-around;
+		margin-top: 20px;
+		padding: 1px;
+		position: relative;
+		display: block;
+		&:before {
+			content: '';
+			border-bottom: solid 1px black;
+			position: absolute;
+			bottom: 0;
+			width: 0;
+			left: 0;
+			transition: all 0.3s ease;
+		}
+		&:after {
+			content: '';
+			border-bottom: solid 1px black;
+			position: absolute;
+			bottom: 0;
+			width: 0;
+			right: 0;
+			transition: all 0.3s ease;
+		}
+		&:hover {
+			&:before {
+				width: 50%;
+			}
+			&:after {
+				width: 50%;
+			}
+		}
+	}
+}
+h1 {
+	animation: slide 3s;
+	text-align: center;
+}
+h2 {
+	text-align: center;
+	padding: 5%;
+}
+h4 {
+	text-align: right;
+	text-decoration: solid;
+}
+.container2 {
+	text-align: left;
+	padding: 25%;
+	padding-top: 5%;
+	padding-bottom: 0;
+	margin: 0;
+	font-style: italic;
+	padding: 5%;
+	margin: 10%;
+	width: auto;
+	color: $color-font;
+	text-align: left;
+	border: double;
+	background-color: $color-container;
+	font-style: italic;
+}
+.container1 {
+	text-align: left;
+	padding: 25%;
+	padding-top: 5%;
+	padding-bottom: 0;
+	margin: 0;
+	padding: 5%;
+	margin: 10%;
+	width: auto;
+	color: $color-font;
+	text-align: left;
+	border: double;
+	background-color: $color-container;
+}
+.container {
+	padding: 5%;
+	margin: 10%;
+	width: auto;
+	color: black;
+	text-align: left;
+	border: double;
+	background-color: $color-container;
+}
+.container5 {
+	padding: 5%;
+	margin: 10%;
+	width: auto;
+	color: $color-font;
+	text-align: left;
+	border: double;
+	background-color: $color-container;
+	display: flex;
+	flex-wrap: nowrap;
+}
+p {
+	text-indent: 0;
+	margin-bottom: 1em;
+}
+#black {
+	font-size: 22px;
+	color: #000000;
+}
+.card-skill {
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	justify-items: space-evenly;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+}
+.works {
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	justify-items: space-evenly;
+	flex-direction: column;
+	align-items: center;
+}
+.card {
+	display: inline-block;
+	margin-left: 1px;
+	width: auto;
+	
+}
+h3 {
+	text-align: center;
+}
+.content-2, .content {
+	flex-basis: 50%;
+	width: 100%;
+	flex-direction: column;
+	
+}
+.io{
+	justify-content: center;
+	
+}
+.loghi {
+	display: flex;
+	justify-content:space-evenly;
+}
+
+#name {
+	background: rgba(255, 255, 255, 0.801);
+	border-style: inset;
+	border-style: solid 1px black double;
+	width: 70%;
+	height: 70%;
+}
+#email {
+	background: rgba(255, 255, 255, 0.801);
+	border-style: inset;
+	border-style: solid 1px black double;
+	width: 70%;
+	height: 70%;
+}
+#testo {
+	background: rgba(255, 255, 255, 0.801);
+	width: 70%;
+	height: 90%;
+}
+
+.offset, #testo, #email, #name {
+    --color: #53719e;
+    --hover: #53719ec7;
+}
+.offset, #testo, #email, #name {
+	font-family: $myfont;
+	background: none; 
+	border: 2px solid rgb(39, 41, 139);
+	font-size: medium;
+	line-height: 1;
+	margin: 0.5em;
+	padding: 1em 2em;
+    box-shadow: 0.3em 0.3em 0 0 var(--color), inset 0.3em 0.3em 0 0 var(--color);
+	&:hover,
+	&:focus {
+	  box-shadow: 
+		0 0 0 0 var(--hover),
+		inset 6em 3.5em 0 0 var(--hover);
+	}
+}
+footer {
+	margin: 0;
+	width: 100%;
+	height: 40px;
+	padding-top: 20px;
+	padding-bottom: 0;
+	background-color: rgba(255, 255, 255, 0.301);
+	color: black;
+	text-align: center;
+}
+@include slidein(slide,0 ,100% );
+@media only screen and (min-height: 280px) and (max-width: 480px) {
+	* {
+		padding: 0;
+		margin: 0;
+	}
+	body {
+		&:after {
+			content: "";
+			display: block;
+			position: fixed;
+			top: 0;
+			height: 100%;
+			width: 100%;
+			left: 0;
+			right: 0;
+			z-index: -10;
+			background-image: url(img/yesfondo2.png);
+			background-size: cover;
+			font-size: 18px;
+			font-family: 'EB Garamond', serif;
+			color: black;
+		}
+	}
+	.menu {
+		width: 100%;
+		position: fixed;
+		top: 0;
+		background-color: rgba(255, 255, 255, 0.959);
+		max-height: 50px;
+		margin: 0;
+		padding: 0;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-pack: space-evenly;
+		-ms-flex-pack: space-evenly;
+		justify-content: space-evenly;
+		color: black;
+	}
+	.container5{
+		flex-direction:column;
+	}
+	.container1 {
+		margin-top: 90px;
+	}
+	
+}
+@media only screen and (min-width: 481px) and (max-width: 899px) and (min-height: 481px) {
+	* {
+		padding: 0;
+		margin: 0;
+	}
+	body {
+		&::after {
+			content: "";
+			display: block;
+			position: fixed;
+			top: 0;
+			height: 100%;
+			width: 100%;
+			left: 0;
+			right: 0;
+			z-index: -10;
+			background-image: url(img/tablet.png);
+			background-size: cover;
+			font-size: 20px;
+			font-family: 'EB Garamond', serif;
+			color: black;
+		}
+	}
+	.menu {
+		width: 100%;
+		position: sticky;
+		position: -webkit-sticky;
+		top: 0;
+		background-color: rgba(255, 255, 255, 0.959);
+		max-height: 70px;
+		margin: 0;
+		padding: 0;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-pack: space-evenly;
+		-ms-flex-pack: space-evenly;
+		justify-content: space-evenly;
+		color: black;
+	}
+	.container1 {
+		margin-top: 90px;
+	}
+	
+}
+@media only screen and (orientation: landscape) {
+	*{
+	  padding: 0;
+	  margin: 0;
+	}
+	body::after {
+	  content: "";
+		display: block;
+	  position: fixed;
+	  top:0;
+	  height: 100%;
+	  width: 100%;
+	  left: 0;
+	  right: 0;
+	  z-index: -10;
+	  background-image:url('img/sfondolanscape.jpg');
+	  -webkit-background-size: cover;
+	  -o-background-size: cover;
+	  background-size: cover;
+	  font-size: 18px;
+	  font-family: 'EB Garamond', serif;
+	  color:black;
+	}
+  }
